@@ -2,7 +2,8 @@ from interfaces import Interface, implements
 
 
 class ISampleInterface(Interface):
-
+    name: str
+    count: int
     def equals(self, a: str, b: str):
         return [a, b]
 
@@ -19,6 +20,9 @@ class IOtherInterface(Interface):
 
 @implements(ISampleExtends, IOtherInterface)
 class Implementation:
+    name = 'Bob'
+    count = 3
+
     def other_method(self, book, article) -> int:
         pass
 
